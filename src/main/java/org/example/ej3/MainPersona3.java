@@ -57,9 +57,9 @@ public class MainPersona3 {
                         String [] dir = jo.get("adress").getAsString().split(",");
                         Direccion d = new Direccion(dir[0], dir[1]);
                         List<Persona> amigos = new ArrayList<Persona>();
-                        JsonArray ar = jsonElement.getAsJsonArray();
-                        for (JsonElement jor:ar){
-                            JsonObject joSub= jsonElement.getAsJsonObject();
+                        JsonArray ar = jo.get("friends").getAsJsonArray();
+                        for (JsonElement joA:ar){
+                            JsonObject joSub= joA.getAsJsonObject();
                             String nom = joSub.get("name").getAsString();
                             String ed= joSub.get("age").getAsString();
                             String []di= joSub.get("adress").getAsString().split(",");
